@@ -22,7 +22,7 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
     result = login_user(db, user.email, user.password)
 
     if not result:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+        raise HTTPException(status_code=401, detail="Erro ao logar! Email ou senha invalidos.")
 
     return result
 
